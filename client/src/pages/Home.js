@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { overAction } from '../actions/overAction';
+import { prevAction, nextAction } from '../actions/buttonAction';
 import { useDispatch, useSelector } from 'react-redux';
 
 import styled from 'styled-components';
 import {useSpring, animated} from 'react-spring'
+
 
 
 
@@ -16,9 +18,17 @@ const Home = () => {
         dispatch(overAction())
     }, [dispatch]);
 
+    //dispatch buttons
+    const nextExp = () => {
+        dispatch(nextAction())
+    }
+    const prevExp = () => {
+        dispatch(prevAction())
+    }
+
 
     //access rootReducer
-    const { experiences, isLoding } = useSelector(state => state.overview) // console.log(experiences)
+    const { experiences, isLoding, itemNum } = useSelector(state => state.overview) // console.log(experiences)
 
     //Spring
     const fadeIn = useSpring({
@@ -30,23 +40,14 @@ const Home = () => {
     });
 
 
-    //buttons
-    const nextExp = () => {
-        console.log('olaaar')
-    }
-    const prevExp = () => {
-        console.log('Aooo bobiiinaaa')
-    }
 
+    const expIndex = itemNum % experiences.length;
 
     //component
     return (
         <>
         {!isLoding && (
-            <Page >
-                <Exp>
-                    <h2></h2>
-                </Exp>
+            <Page >                
                 {experiences.map( (item) => (
                     <Exp style={fadeIn} key={item._id} >
                         <h2>{item.position}</h2>
@@ -57,10 +58,10 @@ const Home = () => {
                             ))}
                         </ul>
                         <h3>{item.year}</h3>
+                    </Exp>
+                ))[expIndex]}
                         <BtnP onClick={prevExp}>previous</BtnP>
                         <BtnN onClick={nextExp}>next-exp</BtnN>
-                    </Exp>
-                ))}
             </Page>
         )}
         </>
@@ -87,10 +88,10 @@ const Exp = styled(animated.div)`{
 
     padding: 30px;
     display: grid;
-    max-width: 568px ;
+    max-width: 368px ;
     grid-template-columns:  1fr;
     justify-content: center;
-    background-color: hsla(240, 30%, 50%, .5);
+    background-color: hsla(240, 30%, 50%, .05);
 
 
 }`;
@@ -100,7 +101,7 @@ const Btn = styled(animated.button)`{
    
     grid-row: 5 ;
     grid-column: 1 ;
-    background-color: hsla(240, 40%, 50%, .5);
+    background-color: hsla(240, 40%, 50%, .75);
 
 }`;
 
