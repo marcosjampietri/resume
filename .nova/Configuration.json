@@ -1,0 +1,7 @@
+{
+  "editor.default_syntax" : "jsx",
+  "index.enabled" : false,
+  "prettier.default-config.arrowParens" : "always",
+  "prettier.default-config.jsxSingleQuote" : "Enable",
+  "workspace.color" : 0
+}

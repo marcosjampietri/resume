@@ -1,0 +1,10 @@
+{
+  "clips" : [
+    {
+      "content" : "const ${:Fn Name} () => {\n\t\n}",
+      "name" : "",
+      "scope" : "editor",
+      "syntax" : "jsx"
+    }
+  ]
+}
