@@ -21,7 +21,6 @@ const Home = () => {
     const { NavOn } = useSelector((state) => state.nav);
 
     const blur = useSpring({
-        filter: NavOn ? "blur(5px) " : "blur(0px) ",
         transform: NavOn ? "scale(0.992)" : "scale(1)",
     });
 

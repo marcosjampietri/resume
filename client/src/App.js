@@ -4,8 +4,9 @@ import Home from "./pages/Home";
 import Works from "./pages/Works";
 import Contact from "./pages/Contact";
 import { GlobalStyles } from "./globalStyles";
+import { useSelector } from "react-redux";
 import { Switch, Route, useLocation } from "react-router-dom";
-import { useTransition, animated } from "react-spring";
+import { useTransition, useSpring, animated } from "react-spring";
 import styled from "styled-components";
 
 function App() {
@@ -23,6 +24,11 @@ function App() {
             leave: { opacity: 0, transform: "translate3d(0%,0,0) scale(0.5)" },
         }
     );
+    const { NavOn } = useSelector((state) => state.nav);
+
+    const blur = useSpring({
+        opacity: NavOn ? "1" : "0",
+    });
 
     return transitions.map(({ item: location, props, key }) => (
         <>
@@ -41,6 +47,7 @@ function App() {
                 />
                 <h6>Check out the code on Github </h6>
             </GitTab>
+            <Blured style={blur} />
             <MJApp key={location.pathname} style={props}>
                 <Switch location={location}>
                     <Route path='/' exact component={Home} />
@@ -54,6 +61,16 @@ function App() {
 
 const MJApp = styled(animated.div)`
     position: relative;
+`;
+const Blured = styled(animated.div)`
+    opacity: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: hsla(0, 100%, 100%, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+    pointer-events: none;
 `;
 
 const GitTab = styled(animated.a)`

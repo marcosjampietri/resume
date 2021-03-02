@@ -1,21 +1,27 @@
-const { getAllEdu, addEdu, getEdu, getAllExps, addExps, getExp, getAllSkills, addSkills, getSkill } = require('../controllers/cvController.js');
+const {
+    getAllEdu,
+    addEdu,
+    getEdu,
+    getAllExps,
+    addExps,
+    getExp,
+    getAllSkills,
+    addSkills,
+    getSkill,
+} = require("../controllers/cvController.js");
 
 const routes = (app) => {
-
-
-
     //CV-EDU
-    app.route("/educations").get(getAllEdu).post(addEdu);
-    app.route("/educations/:eduId").get(getEdu);
+    app.route("/api/educations").get(getAllEdu).post(addEdu);
+    app.route("/api/educations/:eduId").get(getEdu);
 
     //CV-EXP
-    app.route("/experiences").get(getAllExps).post(addExps);
-    app.route("/experiences/:expId").get(getExp);
+    app.route("/api/experiences").get(getAllExps).post(addExps);
+    app.route("/api/experiences/:expId").get(getExp);
 
     //CV-SKILL
-    app.route("/skills").get(getAllSkills).post(addSkills);
-    app.route("/skills/:sklId").get(getSkill);
-
+    app.route("/api/skills").get(getAllSkills).post(addSkills);
+    app.route("/api/skills/:sklId").get(getSkill);
 };
 
 module.exports = routes;
