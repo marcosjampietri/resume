@@ -13,13 +13,13 @@ import { useSpring, animated, interpolate } from "react-spring";
 
 const Works = () => {
     //Page
-    const { NavOn } = useSelector((state) => state.nav);
+    // const { NavOn } = useSelector((state) => state.nav);
 
-    const blur = useSpring({
-        transform: NavOn ? "scale(0.992)" : "scale(1)",
-    });
+    // const blur = useSpring({
+    //     transform: NavOn ? "scale(0.9)" : "scale(1)",
+    // });
     return (
-        <Page style={blur}>
+        <Page>
             <Title>
                 <h1>PORTFOLIO</h1>
             </Title>
@@ -36,7 +36,10 @@ const Works = () => {
                     </ul>
                 </Text>
                 <>
-                    <Pic src='./Images/Pics/Slice 1.png' />
+                    <Pic
+                        src='./Images/Pics/ipad-my.jpg'
+                        alt='My Website sample'
+                    />
                 </>
             </Work>
             <Work>
@@ -54,7 +57,10 @@ const Works = () => {
                     </ul>
                 </Text>
                 <>
-                    <Pic src='./Images/Pics/ipad-Master.png' />
+                    <Pic
+                        src='./Images/Pics/ipad-Mst.jpg'
+                        alt='Master Podcast Logo sample'
+                    />
                 </>
             </Work>
             <Work>
@@ -73,7 +79,10 @@ const Works = () => {
                     </ul>
                 </Text>
                 <>
-                    <Pic src='./Images/Pics/ipad-LMA.png' />
+                    <Pic
+                        src='./Images/Pics/ipad-LMA.jpg'
+                        alt='Lord Music Academy Website sample'
+                    />
                 </>
             </Work>
         </Page>
@@ -147,7 +156,7 @@ const Pic = styled(animated.img)`
     `}
 
     border-radius: 25px;
-    filter: drop-shadow(-10px 10px 4px #22003a);
+    box-shadow: -10px 10px 12px hsla(275, 100%, 11%, 0.7);
 `;
 const Dash = styled(animated.div)`
     grid-column: 1 /2;

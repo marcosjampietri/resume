@@ -8,14 +8,14 @@ import { useSpring, animated } from "react-spring";
 import { above, below } from "../styles";
 
 const Contact = () => {
-    const { NavOn } = useSelector((state) => state.nav);
-    const blur = useSpring({
-        transform: NavOn ? "scale(0.992)" : "scale(1)",
-    });
+    // const { NavOn } = useSelector((state) => state.nav);
+    // const blur = useSpring({
+    //     transform: NavOn ? "scale(0.9)" : "scale(1)",
+    // });
 
     //Page
     return (
-        <Page style={blur}>
+        <Page>
             <PageWrap>
                 <Title>
                     <h1>CONTACT</h1>
@@ -88,7 +88,8 @@ const Title = styled(animated.div)`
 `;
 
 const Items = styled(animated.div)`
-    ///
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 500px));
 `;
 const Item = styled(animated.div)`
     display: grid;
@@ -104,7 +105,8 @@ const Item = styled(animated.div)`
 `;
 
 const Pic = styled(animated.img)`
-    width: 10vh;
-    max-width: 150px;
-    filter: drop-shadow(-10px 10px 4px #22003a);
+    width: 5vh;
+    max-width: 70px;
+    border-radius: 20px;
+    box-shadow: -10px 5px 5px black;
 `;

@@ -18,15 +18,15 @@ const Home = () => {
     }, []);
 
     const { isLoding } = useSelector((state) => state.overview);
-    const { NavOn } = useSelector((state) => state.nav);
-
-    const blur = useSpring({
-        transform: NavOn ? "scale(0.992)" : "scale(1)",
-    });
+    //     const { NavOn } = useSelector((state) => state.nav);
+    //
+    //     const blur = useSpring({
+    //         transform: NavOn ? "scale(0.9)" : "scale(1)",
+    //     });
 
     //Page
     return (
-        <Page style={blur}>
+        <Page>
             <Hero />
             <Title>
                 <h2>A BIT ABOUT ME</h2>
@@ -58,7 +58,7 @@ const Title = styled(animated.div)`
     display: flex;
     justify-content: center;
     padding: 50px;
-    font-size: 2em;
+    font-size: 1.2em;
     color: hsla(335, 100%, 50%, 1);
     background-color: white;
     text-shadow: -1px 1px 3px black;
