@@ -61,7 +61,7 @@ const SkillSection = () => {
                             >
                                 <Icon
                                     // style={{ gridRow: i + 1 }}
-                                    src={`./images/icons/${item.icon}.svg`}
+                                    src={`./Images/Icons/${item.icon}.svg`}
                                     atl='icon'
                                     height='60px'
                                     width='60px'
