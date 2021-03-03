@@ -24,7 +24,11 @@ function App() {
             leave: { opacity: 0, transform: "translate3d(0%,0,0) scale(0.5)" },
         }
     );
+
+    console.log(location);
+    //access rootReducer
     const { NavOn } = useSelector((state) => state.nav);
+    const { isLoding } = useSelector((state) => state.overview);
 
     const blur = useSpring({
         opacity: NavOn ? "1" : "0",
@@ -41,7 +45,7 @@ function App() {
             >
                 <img
                     src='./Images/Icons/git.svg'
-                    atl='icon'
+                    alt='icon'
                     height='30px'
                     width='30px'
                 />
@@ -50,9 +54,9 @@ function App() {
             <Blured style={blur} />
             <MJApp key={location.pathname} style={props}>
                 <Switch location={location}>
-                    <Route path='/' exact component={Home} />
-                    <Route path='/works' component={Works} />
-                    <Route path='/contact' component={Contact} />
+                    {!isLoding && <Route path='/' exact component={Home} />}
+                    {!isLoding && <Route path='/works' component={Works} />}
+                    {!isLoding && <Route path='/contact' component={Contact} />}
                 </Switch>
             </MJApp>
         </>

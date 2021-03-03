@@ -1,11 +1,8 @@
-import React, { useEffect } from "react";
-import { overAction } from "../actions/overAction";
+import React from "react";
 
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { useSpring, animated } from "react-spring";
-import { above, below } from "../styles";
+import { animated } from "react-spring";
+import { below } from "../styles";
 
 const Contact = () => {
     // const { NavOn } = useSelector((state) => state.nav);
@@ -40,6 +37,7 @@ const Contact = () => {
                         <a
                             href='https://www.linkedin.com/in/marcos-jampietri-9942115b/'
                             target='_blank'
+                            rel='noreferrer'
                         >
                             <h3> LINKEDIN</h3>
                         </a>
@@ -49,6 +47,7 @@ const Contact = () => {
                         <a
                             href='https://www.instagram.com/marcosjampietri/'
                             target='_blank'
+                            rel='noreferrer'
                         >
                             <h3>INSTAGRAM</h3>
                         </a>

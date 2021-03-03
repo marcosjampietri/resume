@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { overAction } from "../actions/overAction";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Hero from "../components/heroComponent";
 import About from "../components/aboutComponent";
 import EduSection from "../components/eduComponent";
@@ -8,21 +8,14 @@ import ExpSection from "../components/expComponent";
 import SkillSection from "../components/skillComponent";
 
 import styled from "styled-components";
-import { useSpring, animated } from "react-spring";
+import { animated } from "react-spring";
 
 const Home = () => {
     //dispatch overAction
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(overAction());
-    }, []);
-
-    const { isLoding } = useSelector((state) => state.overview);
-    //     const { NavOn } = useSelector((state) => state.nav);
-    //
-    //     const blur = useSpring({
-    //         transform: NavOn ? "scale(0.9)" : "scale(1)",
-    //     });
+    }, [dispatch]);
 
     //Page
     return (

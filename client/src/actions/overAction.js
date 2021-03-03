@@ -5,9 +5,12 @@ export const overAction = () => async (dispatch) => {
         type: "LOADING",
     });
 
-    const expUrl = () => "http://localhost:5000/api/experiences";
-    const eduUrl = () => "http://localhost:5000/api/educations";
-    const sklUrl = () => "http://localhost:5000/api/skills";
+    const url =
+        process.env.NODE_ENV === "development" ? "http://localhost:5000" : "";
+
+    const expUrl = () => `${url}/api/experiences`;
+    const eduUrl = () => `${url}/api/educations`;
+    const sklUrl = () => `${url}/api/skills`;
 
     const allExp = await axios.get(expUrl());
     const allEdu = await axios.get(eduUrl());

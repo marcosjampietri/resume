@@ -1,14 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { overAction } from "../actions/overAction";
 import { navAction } from "../actions/buttonAction";
-
 import { Link } from "react-router-dom";
-
-import { above, below } from "../styles";
-import styled, { css } from "styled-components";
+import { below } from "../styles";
+import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
-
 import { HiOutlineX } from "react-icons/hi";
 import { GiHamburgerMenu } from "react-icons/gi";
 
@@ -20,14 +16,14 @@ const NavBar = () => {
         dispatch(navAction());
     };
 
+    const { NavOn } = useSelector((state) => state.nav);
     useEffect(() => {
         if (NavOn) {
             dispatch(navAction());
         }
-    }, [Link]);
+    }, [dispatch]);
 
     //access rootReducer
-    const { NavOn } = useSelector((state) => state.nav);
 
     //Spring
     const navAnimation = useSpring({
@@ -42,7 +38,7 @@ const NavBar = () => {
                     <Link as='a' to='/'>
                         <img
                             src='./Images/Icons/MJ(LOGO).svg'
-                            atl='logo'
+                            alt='logo'
                             height='100%'
                         />
                     </Link>

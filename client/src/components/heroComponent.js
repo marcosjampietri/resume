@@ -1,30 +1,14 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+
 import { Link } from "react-router-dom";
 
 import styled from "styled-components";
-import { useSpring, animated } from "react-spring";
+import { animated } from "react-spring";
 
-import { above, below } from "../styles";
+import { below } from "../styles";
 
 const Hero = () => {
     //access rootReducer
-    const { isLoding } = useSelector((state) => state.overview);
-
-    //spring
-    const intro = useSpring({
-        from: {
-            opacity: 0,
-            transform: "translate3d(0,15%,0)",
-        },
-        to: {
-            opacity: 1,
-            transform: "translate3d(0,0,0)",
-        },
-        config: {
-            // duration: 100,
-        },
-    });
 
     //component
     return (

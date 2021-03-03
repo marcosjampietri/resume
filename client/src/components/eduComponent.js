@@ -1,33 +1,21 @@
 import React from "react";
-import {
-    prevEduAction,
-    nextEduAction,
-    tglEduAction,
-} from "../actions/buttonAction";
+import { tglEduAction } from "../actions/buttonAction";
 import { useDispatch, useSelector } from "react-redux";
 
 import styled from "styled-components";
-import { useTrail, animated, interpolate } from "react-spring";
+import { useTrail, animated } from "react-spring";
 
 const EduSection = () => {
     //dispatch actions
     const dispatch = useDispatch();
 
-    const nextEdu = () => {
-        dispatch(nextEduAction());
-    };
-    const prevEdu = () => {
-        dispatch(prevEduAction());
-    };
     const toggleEdu = () => {
         dispatch(tglEduAction());
     };
 
     //access rootReducer
-    const { educations, isLoding, eduNum } = useSelector(
-        (state) => state.overview
-    );
-    const eduIndex = eduNum % educations.length;
+    const { educations, isLoding } = useSelector((state) => state.overview);
+
     const { EduOn } = useSelector((state) => state.eduRed);
 
     //spring
@@ -60,7 +48,7 @@ const EduSection = () => {
                                             (y) => `translate3d(0,0,0)`
                                         ),
                                     }}
-                                    key={educations[index]}
+                                    key={index}
                                 >
                                     <h2 style={{ height }} key={index}>
                                         {educations[index].qualification}
@@ -100,16 +88,4 @@ const Edu = styled(animated.div)`
     h2 {
         padding: 20px;
     }
-`;
-
-const Btn = styled(animated.button)`
-    background-color: hsla(240, 40%, 50%, 0.75);
-`;
-
-const BtnP = styled(Btn)`
-    justify-self: start;
-`;
-
-const BtnN = styled(Btn)`
-    justify-self: end;
 `;

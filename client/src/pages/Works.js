@@ -1,23 +1,11 @@
-import React, { useEffect, useState } from "react";
-
-import { overAction } from "../actions/overAction";
-
-import { useDispatch, useSelector } from "react-redux";
-
-import { useGesture } from "react-use-gesture";
+import React from "react";
 
 import styled from "styled-components";
-import { above, below } from "../styles";
+import { below } from "../styles";
 
-import { useSpring, animated, interpolate } from "react-spring";
+import { animated } from "react-spring";
 
 const Works = () => {
-    //Page
-    // const { NavOn } = useSelector((state) => state.nav);
-
-    // const blur = useSpring({
-    //     transform: NavOn ? "scale(0.9)" : "scale(1)",
-    // });
     return (
         <Page>
             <Title>
