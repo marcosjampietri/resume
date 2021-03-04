@@ -21,9 +21,9 @@ const About = () => {
                 </h4>
                 <h4>
                     As My career grown I've seen the need to act as an
-                    Entrepreneur, managing msy brand, marketing and online
+                    Entrepreneur, managing my brand, marketing and online
                     presence, what lead me to web design and, recently into
-                    programming lenguages as well.
+                    programming languages as well.
                 </h4>
             </Abt>
         </Component>

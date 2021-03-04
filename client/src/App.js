@@ -25,7 +25,6 @@ function App() {
         }
     );
 
-    console.log(location);
     //access rootReducer
     const { NavOn } = useSelector((state) => state.nav);
     const { isLoding } = useSelector((state) => state.overview);
@@ -40,8 +39,9 @@ function App() {
             <NavBar />
 
             <GitTab
-                href='https://github.com/marcosjampietri/portfolio'
+                href='https://github.com/marcosjampietri/resume'
                 target='_blank'
+                rel='noreferrer'
             >
                 <img
                     src='./Images/Icons/git.svg'

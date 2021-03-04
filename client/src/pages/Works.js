@@ -113,6 +113,7 @@ const Text = styled(animated.div)`
         color: hsla(335, 100%, 50%, 1);
         text-shadow: -1px 1px 2px black;
         grid-column: 1 /5;
+        font-size: clamp(0.8rem, 3.5vw, 2rem);
     }
     ul {
         align-self: start;
@@ -131,12 +132,12 @@ const Pic = styled(animated.img)`
     position: relative;
     top: -50px;
     width: 50vw;
-    right: -5vw;
+    right: 0px;
 
     grid-column: 2;
     ${below.med`
     grid-column: 1;
-    right: -25vw;
+     right: -20vw;
     top: 0px;
     width: 70vw;
        order:-1;

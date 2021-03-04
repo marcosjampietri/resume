@@ -40,10 +40,18 @@ const SkillSection = () => {
     return (
         <Block>
             <Filter>
-                <Btn onClick={psnSkl}>PERSONAL</Btn>
-                <Btn onClick={softSkl}>SOFTWARES</Btn>
-                <Btn onClick={beSkl}>BACK-END</Btn>
-                <Btn onClick={feSkl}>FRONT-END</Btn>
+                <Btn onClick={psnSkl}>
+                    <h5>PERSONAL</h5>
+                </Btn>
+                <Btn onClick={softSkl}>
+                    <h5>SOFTWARES</h5>
+                </Btn>
+                <Btn onClick={beSkl}>
+                    <h5>BACK-END</h5>
+                </Btn>
+                <Btn onClick={feSkl}>
+                    <h5>FRONT-END</h5>
+                </Btn>
             </Filter>
             {!isLoding && (
                 <ul>
@@ -82,6 +90,8 @@ export default SkillSection;
 //style------------------------------------------------------------------
 
 const Block = styled(animated.div)`
+    width: 100vw;
+
     display: grid;
     grid-template-columns: minmax(280px, 600px);
     justify-content: space-around;
@@ -99,7 +109,7 @@ const Filter = styled(animated.div)`
 
 const Skill = styled(animated.li)`
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 20% 70%;
     grid-template-rows: 100px;
     justify-items: center;
     align-items: center;
@@ -109,32 +119,43 @@ const Skill = styled(animated.li)`
 
 const Icon = styled(animated.img)`
     grid-column: 1;
-    // background-image: radial-gradient(hsl(360, 100%, 50%), hsl(335, 100%, 50%));
-    // border: solid 1px hsla(215, 85%, 10%, 0.1);
+
     border-radius: 10px;
-    // box-shadow: -10px 1px 10px black;
-    filter: drop-shadow(-3px 5px 4px #22003a);
-    // padding: 20px;
+
+    filter: drop-shadow(-3px 5px 3px #22003a);
+    width: 50%;
 `;
 const Description = styled(animated.div)`
     grid-column: 2;
     background-color: hsla(263, 40%, 65%, 0);
     width: 100%;
     h4 {
+        font-size: clamp(0.8rem, 3.5vw, 1.1rem);
     }
 `;
 
 const Btn = styled(animated.button)`
     height: 60px;
-    width: 100%;
-    margin: -20px;
-    border-radius: 50px;
+    width: 30%;
+    margin: 5px;
+    border-color: hsl(335, 100%, 50%);
+    border-radius: 20px;
     font-weight: bolder;
-    color: white;a
-    background-color: white; 
-    color: #22003A;
+    color: white;
+    background-color: white;
+    color: #22003a;
     transition: 1s;
+
+    h5 {
+        font-size: clamp(0.4rem, 2.5vw, 1rem);
+    }
+
     &:focus {
+        transition: 1s;
+        background-color: hsla(345, 100%, 50%, 1);
+        color: white;
+    }
+    &:hover {
         transition: 1s;
         background-color: hsla(345, 100%, 50%, 1);
         color: white;

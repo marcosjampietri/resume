@@ -144,13 +144,13 @@ const Btn = styled(animated.button)`
 `;
 
 const BtnP = styled(Btn)`
-    width: 50%;
+    width: 40%;
     justify-self: start;
     border-radius: 50px 0px 0px 50px;
 `;
 
 const BtnN = styled(Btn)`
-    width: 50%;
+    width: 40%;
     justify-self: end;
     border-radius: 0px 50px 50px 0px;
 `;

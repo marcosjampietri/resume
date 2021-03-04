@@ -56,7 +56,7 @@ const NavBar = () => {
                     <Link to='/contact'>CONTACT</Link>
                 </Mainsmall>
 
-                <Push onClick={ToggleNav} NavOn={NavOn}>
+                <Push onClick={ToggleNav}>
                     {NavOn ? <HiOutlineX /> : <GiHamburgerMenu />}
                 </Push>
             </Grid>
@@ -71,8 +71,7 @@ export default NavBar;
 const Block = styled(animated.div)`
     position: fixed;
     z-index: 5;
-
-    width: 100%;
+    width: 100vw;
     height: 120px;
 `;
 const Grid = styled(animated.div)`
@@ -84,7 +83,7 @@ const Grid = styled(animated.div)`
     background-color: hsla(263, 35%, 10.5%, 0.95);
 `;
 const Logo = styled(animated.button)`
-    padding: 10px;
+    padding: 10px 10px 20px 20px;
     height: 100px;
     justify-self: end;
 
@@ -142,7 +141,7 @@ const Mainsmall = styled(animated.div)`
         
         a{
             color: hsla(15, 100%, 80%, 1);
-            font-size: clamp(1.5rem, 2.5vw, 4rem);
+            font-size: clamp(1rem, 2.5vw, 3.5rem);
             margin: 50px 0px;
         }
                
@@ -163,13 +162,17 @@ const Push = styled(animated.button)`
 
     display: none;
     z-index: 8;
-    margin: 10px;
+    margin: 10px 20px 10px 10px;
 
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
 
-    background-image: radial-gradient(hsl(0, 100%, 50%), hsl(335, 100%, 50%));
+    background-image: linear-gradient(
+        120deg,
+        hsl(335, 100%, 50%),
+        hsl(350, 100%, 50%)
+    );
     border: solid 0px;
     border-radius: 5px;
-    font-size: 3em;
+    font-size: 2.5em;
 `;

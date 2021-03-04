@@ -33,6 +33,7 @@ const Home = () => {
                 <h2>MY EDUCATION</h2>
             </Title>
             <EduSection />
+
             <Title>
                 <h2>MY SKILLSET</h2>
             </Title>
@@ -45,13 +46,15 @@ export default Home;
 
 //style------------------------------------------------------------------
 
-const Page = styled(animated.div)``;
+const Page = styled(animated.div)`
+    width: 100%;
+`;
 
 const Title = styled(animated.div)`
     display: flex;
     justify-content: center;
-    padding: 50px;
-    font-size: 1.2em;
+    padding: 50px 20px;
+    font-size: clamp(0.6rem, 3.5vw, 2rem);
     color: hsla(335, 100%, 50%, 1);
     background-color: white;
     text-shadow: -1px 1px 3px black;
