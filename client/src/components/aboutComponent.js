@@ -1,7 +1,7 @@
 import React from "react";
-
-import styled from "styled-components";
 import { animated } from "react-spring";
+import styled from "styled-components";
+
 
 const About = () => {
     //component
@@ -10,20 +10,20 @@ const About = () => {
             <Abt>
                 <h4>
                     Hello. I'm Marcos Jampietri and I enjoy working on creation
-                    and tecnology . My goal is to deliver solutions to yet
-                    unkown problems.
+                    and technology. My goal is to deliver solutions to yet
+                    unknown problems.
                 </h4>
                 <h4>
                     My career started as a musician at a very young age when I
-                    started singing and playing guitar and piano, field where I
-                    hold a Degree in Music Education. Soon I got envolved with
-                    audio and music production.
+                    started singing and playing guitar and piano, holding a
+                    Degree in Music Education. Soon I started dealing with audio
+                    and music production.
                 </h4>
                 <h4>
-                    As My career grown I've seen the need to act as an
-                    Entrepreneur, managing my brand, marketing and online
-                    presence, what lead me to web design and, recently into
-                    programming languages as well.
+                    As I developed in my career, I've seen myself to act more
+                    and more as an Entrepreneur, managing my brand, marketing
+                    and online presence, what led me to web design and, recently
+                    into programming languages as well.
                 </h4>
             </Abt>
         </Component>

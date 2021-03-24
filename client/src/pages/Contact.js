@@ -60,6 +60,7 @@ const Page = styled(animated.div)`
     padding-top: 180px;
     width: 100vw;
     height: 100vh;
+    min-height: 600px;
     background-color: white;
 `;
 
