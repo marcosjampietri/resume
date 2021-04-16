@@ -25,9 +25,10 @@ app.get("/api", function (req, res) {
     res.send("Hello SERVER");
 });
 
+const uri = process.env.DATABASE;
 //mongo connection
 mongoose
-    .connect(process.env.DATABASE, {
+    .connect(uri, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false,
