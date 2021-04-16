@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { navAction } from "../actions/buttonAction";
-import { Link } from "react-router-dom";
-import { below } from "../styles";
-import styled from "styled-components";
-import { useSpring, animated } from "react-spring";
-import { HiOutlineX } from "react-icons/hi";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { HiOutlineX } from "react-icons/hi";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { animated, useSpring } from "react-spring";
+import styled from "styled-components";
+import { navAction } from "../actions/buttonAction";
+import { below } from "../styles";
 
 const NavBar = () => {
     const dispatch = useDispatch();
@@ -23,7 +23,10 @@ const NavBar = () => {
         }
     }, [dispatch]);
 
-    //access rootReducer
+    //go to top on page change
+    const GoTop = () => {
+        window.scrollTo(0, 0);
+    };
 
     //Spring
     const navAnimation = useSpring({
@@ -35,7 +38,7 @@ const NavBar = () => {
         <Block>
             <Grid>
                 <Logo>
-                    <Link as='a' to='/'>
+                    <Link as='a' to='/' onClick={GoTop}>
                         <img
                             src='./Images/Icons/MJ(LOGO).svg'
                             alt='logo'
@@ -45,18 +48,35 @@ const NavBar = () => {
                 </Logo>
 
                 <Main>
-                    <Link to='/'>ABOUT ME</Link>
-                    <Link to='/works'>PORTFOLIO</Link>
-                    <Link to='/contact'>CONTACT</Link>
+                    <Link to='/' onClick={GoTop}>
+                        ABOUT ME
+                    </Link>
+                    <Link to='/works' onClick={GoTop}>
+                        PORTFOLIO
+                    </Link>
+                    <Link to='/contact' onClick={GoTop}>
+                        CONTACT
+                    </Link>
                 </Main>
 
                 <Mainsmall style={navAnimation}>
-                    <Link to='/'>ABOUT ME</Link>
-                    <Link to='/works'>PORTFOLIO</Link>
-                    <Link to='/contact'>CONTACT</Link>
+                    <Link to='/' onClick={GoTop}>
+                        ABOUT ME
+                    </Link>
+                    <Link to='/works' onClick={GoTop}>
+                        PORTFOLIO
+                    </Link>
+                    <Link to='/contact' onClick={GoTop}>
+                        CONTACT
+                    </Link>
                 </Mainsmall>
 
-                <Push onClick={ToggleNav}>
+                <Push
+                    onClick={() => {
+                        GoTop();
+                        ToggleNav();
+                    }}
+                >
                     {NavOn ? <HiOutlineX /> : <GiHamburgerMenu />}
                 </Push>
             </Grid>

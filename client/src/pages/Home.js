@@ -1,14 +1,13 @@
 import React, { useEffect } from "react";
-import { overAction } from "../actions/overAction";
 import { useDispatch } from "react-redux";
-import Hero from "../components/heroComponent";
+import { animated } from "react-spring";
+import styled from "styled-components";
+import { overAction } from "../actions/overAction";
 import About from "../components/aboutComponent";
 import EduSection from "../components/eduComponent";
 import ExpSection from "../components/expComponent";
+import Hero from "../components/heroComponent";
 import SkillSection from "../components/skillComponent";
-
-import styled from "styled-components";
-import { animated } from "react-spring";
 
 const Home = () => {
     //dispatch overAction
@@ -26,6 +25,10 @@ const Home = () => {
             </Title>
             <About />
             <Title>
+                <h2>MY SKILLSET</h2>
+            </Title>
+            <SkillSection />
+            <Title>
                 <h2>MY EXPERIENCE</h2>
             </Title>
             <ExpSection />
@@ -33,11 +36,6 @@ const Home = () => {
                 <h2>MY EDUCATION</h2>
             </Title>
             <EduSection />
-
-            <Title>
-                <h2>MY SKILLSET</h2>
-            </Title>
-            <SkillSection />
         </Page>
     );
 };

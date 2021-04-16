@@ -79,6 +79,7 @@ const Component = styled(animated.div)`
     display: grid;
     justify-content: center;
     background-color: white;
+    padding-bottom: 150px;
 `;
 
 const Edu = styled(animated.div)`

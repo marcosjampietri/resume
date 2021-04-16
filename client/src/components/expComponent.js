@@ -1,9 +1,9 @@
 import React from "react";
-import { prevExpAction, nextExpAction } from "../actions/buttonAction";
 import { useDispatch, useSelector } from "react-redux";
-
+import { animated, useTransition } from "react-spring";
 import styled from "styled-components";
-import { useTransition, animated } from "react-spring";
+import { nextExpAction, prevExpAction } from "../actions/buttonAction";
+
 
 const ExpSection = () => {
     const dispatch = useDispatch();

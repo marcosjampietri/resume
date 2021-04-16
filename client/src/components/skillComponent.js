@@ -1,15 +1,14 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { animated, useSpring } from "react-spring";
+import styled from "styled-components";
 import {
     beSklAction,
-    psnSklAction,
-    softSklAction,
-    feSklAction,
+
+
+    feSklAction, psnSklAction,
+    softSklAction
 } from "../actions/filterAction";
-import { useDispatch, useSelector } from "react-redux";
-
-import styled from "styled-components";
-import { useSpring, animated } from "react-spring";
-
 const SkillSection = () => {
     //dispatch Action
     const dispatch = useDispatch();
@@ -97,7 +96,7 @@ const Block = styled(animated.div)`
     justify-content: space-around;
     background-color: white;
     color: black;
-    padding-bottom: 500px;
+    padding-bottom: 100px;
 `;
 
 const Filter = styled(animated.div)`

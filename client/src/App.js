@@ -1,13 +1,14 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { Route, Switch, useLocation } from "react-router-dom";
+import { animated, useSpring, useTransition } from "react-spring";
+import styled from "styled-components";
+import Footer from "./components/footComponent";
 import NavBar from "./components/navComponent";
+import { GlobalStyles } from "./globalStyles";
+import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Works from "./pages/Works";
-import Contact from "./pages/Contact";
-import { GlobalStyles } from "./globalStyles";
-import { useSelector } from "react-redux";
-import { Switch, Route, useLocation } from "react-router-dom";
-import { useTransition, useSpring, animated } from "react-spring";
-import styled from "styled-components";
 
 function App() {
     const location = useLocation();
@@ -58,6 +59,7 @@ function App() {
                     {!isLoding && <Route path='/works' component={Works} />}
                     {!isLoding && <Route path='/contact' component={Contact} />}
                 </Switch>
+                <Footer />
             </MJApp>
         </>
     ));
