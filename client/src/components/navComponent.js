@@ -71,12 +71,7 @@ const NavBar = () => {
                     </Link>
                 </Mainsmall>
 
-                <Push
-                    onClick={() => {
-                        GoTop();
-                        ToggleNav();
-                    }}
-                >
+                <Push onClick={ToggleNav}>
                     {NavOn ? <HiOutlineX /> : <GiHamburgerMenu />}
                 </Push>
             </Grid>
